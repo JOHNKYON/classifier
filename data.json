@@ -1,0 +1,16 @@
+{
+ "1": "{\"credit_rating\": \"0\", \"age\": \"0\", \"buy\": \"no\\r\\n\", \"student\": \"0\", \"income\": \"1\"}",
+ "2": "{\"credit_rating\": \"1\", \"age\": \"0\", \"buy\": \"no\\r\\n\", \"student\": \"0\", \"income\": \"1\"}",
+ "3": "{\"credit_rating\": \"0\", \"age\": \"0.5\", \"buy\": \"yes\\r\\n\", \"student\": \"0\", \"income\": \"1\"}",
+ "4": "{\"credit_rating\": \"0\", \"age\": \"1\", \"buy\": \"yes\\r\\n\", \"student\": \"0\", \"income\": \"0.5\"}",
+ "5": "{\"credit_rating\": \"0\", \"age\": \"1\", \"buy\": \"yes\\r\\n\", \"student\": \"1\", \"income\": \"0\"}",
+ "6": "{\"credit_rating\": \"1\", \"age\": \"1\", \"buy\": \"no\\r\\n\", \"student\": \"1\", \"income\": \"0\"}",
+ "7": "{\"credit_rating\": \"1\", \"age\": \"0.5\", \"buy\": \"yes\\r\\n\", \"student\": \"1\", \"income\": \"0\"}",
+ "8": "{\"credit_rating\": \"0\", \"age\": \"0\", \"buy\": \"no\\r\\n\", \"student\": \"0\", \"income\": \"0.5\"}",
+ "9": "{\"credit_rating\": \"0\", \"age\": \"0\", \"buy\": \"yes\", \"student\": \"1\", \"income\": \"0\"}",
+ "10": "{\"credit_rating\": \"0\", \"age\": \"1\", \"buy\": \"yes\\r\\n\", \"student\": \"1\", \"income\": \"0.5\"}",
+ "11": "{\"credit_rating\": \"1\", \"age\": \"0\", \"buy\": \"yes\\r\\n\", \"student\": \"1\", \"income\": \"0.5\"}",
+ "12": "{\"credit_rating\": \"1\", \"age\": \"0.5\", \"buy\": \"yes\\r\\n\", \"student\": \"0\", \"income\": \"0.5\"}",
+ "13": "{\"credit_rating\": \"0\", \"age\": \"0.5\", \"buy\": \"yes\\r\\n\", \"student\": \"1\", \"income\": \"1\"}",
+ "14": "{\"credit_rating\": \"1\", \"age\": \"1\", \"buy\": \"no\", \"student\": \"0\", \"income\": \"0.5\"}"
+}
