@@ -60,13 +60,13 @@ def data_decode():
         test_feature.append(people)
         test_label.append(person["buy"])
 
+
 # 建立决策树
 def __tree():
     data_decode()
     clf = tree.DecisionTreeClassifier()
     clf.fit(train_feature, train_label)
     print(clf.predict([["0", "1", "1", "0.5"]]))
-
 
 
 __tree()
