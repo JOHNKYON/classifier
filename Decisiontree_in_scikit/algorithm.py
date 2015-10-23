@@ -2,9 +2,9 @@
 
 from sklearn.datasets import load_iris
 from sklearn import tree
-from sklearn.externals.six import StringIO
+import os
+# from sklearn.externals.six import StringIO
 import logging
-import pydot
 
 
 logging.basicConfig(
@@ -24,3 +24,7 @@ clf = clf.fit(iris.data, iris.target)
 # 读取iris库中数据
 with open("iris.dot", 'w') as f:
     f = tree.export_graphviz(clf, out_file=f)
+
+os.unlink("iris.dot")
+
+clf.predict_proba(iris.data[:1, :])
