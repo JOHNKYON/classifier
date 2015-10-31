@@ -92,7 +92,7 @@ for line in input_people.readlines():
     elif person[label["9"]] == "团员":
         person_digital["9"] = 0.5
     else:
-        person_digital["10"] = 0
+        person_digital["9"] = 0
 
     # 亲友关系
     if person[label["10"]] == "是":
