@@ -2,4 +2,5 @@
 
 import algorithm
 
-algorithm.run()
+algorithm.run_decision_tree()
+

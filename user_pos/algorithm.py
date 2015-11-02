@@ -14,9 +14,9 @@ from sklearn import tree
 from sklearn.externals.six import StringIO
 
 
-def run():
+def run_decision_tree():
     # 开始运行
-    log_conf.logger.info("user_pos matching starting...")
+    log_conf.logger.info("Decision_tree starting...")
 
     log_conf.logger.info("Training star...")
 
@@ -65,16 +65,21 @@ def run():
     clf = tree.DecisionTreeClassifier()
     clf.fit(x, y)
 
+    log_conf.logger.info("Training finished.")
+
+    log_conf.logger.info("Creating image dot...")
+
     # 输出决策树图像
     with open("tree.dot", 'w') as f:
         f = tree.export_graphviz(clf, out_file=f)
 
-    test_employer = list()
     # 测试树的决策性能
+    log_conf.logger.info("Performance test starting...")
+
     count = 0
     test_count = 0
     for line in lines:
-        if count <= 90:
+        if 90 <= count < 140:
             person = json.loads(line)
             person_list = [person["7"], person["8"], person["9"], person["10"], person["11"], person["12"], person["13"],
                        person["15"], person["17"], person["23"]]
@@ -90,7 +95,17 @@ def run():
 
         count += 1
 
-    print test_count/90
+    print test_count/50
+
+    log_conf.logger.info("Accurate rate = "+str(test_count/50))
+
     # 关闭输入文件
     input_employer.close()
     input_loser.close()
+
+
+def run_random_forest():
+    log_conf.logger.info("Random forest startung...")
+
+    log_conf.logger.info("Training start")
+
