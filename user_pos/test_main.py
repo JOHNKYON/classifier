@@ -2,5 +2,6 @@
 
 import algorithm
 
-algorithm.run_decision_tree()
+# algorithm.run_decision_tree()
 
+algorithm.run_random_forest()
