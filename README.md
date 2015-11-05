@@ -1,2 +1,2 @@
 # scikit-decisiontree-demo
-A demo of decisiontree in scikit
+A set of demos for all kinds of machine learning
