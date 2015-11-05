@@ -156,7 +156,7 @@ def run_random_forest():
 
     log_conf.logger.info("Training finished.")
 
-    log_conf.logger.info("Creating image dot...")
+    # log_conf.logger.info("Creating image dot...")
 
     # 输出决策树图像
     # with open("tree.dot", 'w') as f:
