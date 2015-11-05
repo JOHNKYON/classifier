@@ -130,10 +130,10 @@ def run_random_forest():
 
         count += 1
 
-    # 读500个落选者作为训练
+    # 读100个落选者作为训练
     count = 0
     for line in input_loser.readlines():
-        if count == 500:
+        if count == 100:
             break
 
         person = json.loads(line)
@@ -149,7 +149,7 @@ def run_random_forest():
 
     # 生成标签
     label_temp = numpy.array([1, 0])
-    y = label_temp.repeat([90, 500])
+    y = label_temp.repeat([90, 100])
 
     clf = RandomForestClassifier(n_estimators=10)
     clf.fit(x, y)
@@ -184,10 +184,10 @@ def run_random_forest():
 
         count += 1
 
-    print test_count/50
-
     log_conf.logger.info("Accurate rate = "+str(test_count/50))
 
     # 关闭输入文件
     input_employer.close()
     input_loser.close()
+
+    return test_count/50
