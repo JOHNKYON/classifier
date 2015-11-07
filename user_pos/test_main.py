@@ -18,6 +18,7 @@ for index in range(0, 500):
     TN += result[2]
     FN += result[3]
 
+
 precision = TP / (TP + FP)
 recall = TP / (TP + FN)
 accuracy = (TP + TN) / (TP+FP+TN+FN)

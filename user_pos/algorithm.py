@@ -131,11 +131,11 @@ def run_random_forest():
 
         count += 1
 
-    # 读100个落选者作为训练
+    # 读1000个落选者作为训练
     count = 0
     loser_lines = input_loser.readlines()
     for line in loser_lines:
-        if count == 100:
+        if count == 1000:
             break
 
         person = json.loads(line)
@@ -151,7 +151,7 @@ def run_random_forest():
 
     # 生成标签
     label_temp = numpy.array([1, 0])
-    y = label_temp.repeat([90, 100])
+    y = label_temp.repeat([90, 1000])
 
     clf = RandomForestClassifier(n_estimators=10)
     clf.fit(x, y)
@@ -173,7 +173,7 @@ def run_random_forest():
 
     TN = 0
     FN = 0
-    false_bias = random.randint(0, 1000)
+    false_bias = random.randint(0, 100)
 
     test_count = 0
     for line in employer_lines:
