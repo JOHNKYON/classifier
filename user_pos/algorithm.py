@@ -3,7 +3,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import unicode_literals
 
-import log_conf
+from log_conf import log_conf
 import data
 # import conf
 import numpy
@@ -105,7 +105,7 @@ def run_decision_tree():
     input_loser.close()
 
 
-def run_random_forest():
+def run_random_forest(now):
     # log_conf.logger.info("Random forest startung...")
 
     # log_conf.logger.info("Training start")
@@ -131,11 +131,11 @@ def run_random_forest():
 
         count += 1
 
-    # 读1000个落选者作为训练
+    # 读170个落选者作为训练
     count = 0
     loser_lines = input_loser.readlines()
     for line in loser_lines:
-        if count == 1000:
+        if count == now:
             break
 
         person = json.loads(line)
@@ -151,7 +151,7 @@ def run_random_forest():
 
     # 生成标签
     label_temp = numpy.array([1, 0])
-    y = label_temp.repeat([90, 1000])
+    y = label_temp.repeat([90, now])
 
     clf = RandomForestClassifier(n_estimators=10)
     clf.fit(x, y)
