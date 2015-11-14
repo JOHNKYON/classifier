@@ -13,7 +13,7 @@ FN = 0
 small = 150
 big = 170
 
-
+'''
 def pre_small(para):
     init_TP_small = 0
     init_FP_small = 0
@@ -59,10 +59,30 @@ print("small\t"+str(small))
 print("big\t"+str(big))
 
 print pre_small(small)
-print pre_big(big)
+print pre_big(big)'''
 
-precision = TP / (TP + FP)
-recall = TP / (TP + FN)
-accuracy = (TP + TN) / (TP+FP+TN+FN)
+muilt = 1
+
+while muilt:
+    try:
+        TP = 0
+        FP = 0
+        TN = 0
+        FN = 0
+        for index in range(0, 1000):
+            print index
+            result = algorithm.run_random_forest(90*muilt)
+            TP += result[0]
+            FP += result[1]
+            TN += result[2]
+            FN += result[3]
+
+        precision = TP / (TP + FP)
+        recall = TP / (TP + FN)
+        accuracy = (TP + TN) / (TP + FP + TN + FN)
+        muilt += 0.2
+    except:
+        print muilt
+        break
 
 print("precision = %f\nrecall = %f\naccuracy = %f" % (precision, recall, accuracy))

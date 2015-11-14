@@ -195,7 +195,7 @@ def run_random_forest(now):
 
     count = 0
     for line in loser_lines:
-        if 100+false_bias <= count < 200+false_bias:
+        if 100+false_bias <= count < 1100+false_bias:
             person = json.loads(line)
             person_list = [person["6"], person["7"], person["8"], person["9"], person["10"], person["11"], person["12"],
                         person["14"], person["16"], person["22"]]
@@ -212,6 +212,11 @@ def run_random_forest(now):
             count += 1
 
     result = [TP, FP, TN, FN]
+
+    # 关闭输入文件
+    input_employer.close()
+    input_loser.close()
+
     return result
 
 
