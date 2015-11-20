@@ -11,7 +11,7 @@ import codecs
 
 # 第一阶段可直接数字化的项有 7是否接受调剂 8婚姻状况 9海外经历
 # 10政治面貌 11亲友关系 12实习与否 13是否报考硕博 15学校级别(读json) 17学历 18学位
-# 23年级排名 获奖级别 英语等级 期望月薪（留议)
+# 23年级排名 51奖学金级别 57英语等级和分数 期望月薪（留议)
 
 
 # 打开输入文件
@@ -130,6 +130,27 @@ for line in input_people.readlines():
     # print type(grade_dig(person[label["17"]]))
     # print count
     person_digital["23"] = grade_dig(person[label["23"]])
+
+    # 奖学金级别
+    if person[label["51"]] == "国家级":
+        person_digital["51"] = 1
+    elif person[label["51"]] == "院校级":
+        person_digital["51"] = 0.5
+    else:
+        person_digital["51"] = 0
+
+    # 英语等级和分数
+    try:
+        if person[label["57"]] == "CET6":
+            person_digital["57"] = (int(person[label["58"]])-400)/100
+        elif person[label["57"]] == "CET4":
+            person_digital["57"] = (int(person[label["58"]])-400)/200
+        elif person[label["57"]] == "TOEFL":
+            person_digital["57"] = (int(person[label["58"]])-400)/25
+        else:
+            person_digital["57"] = 0
+    except:
+        person_digital["57"] = -1
 
     # 将person_digital转换为json
     j_person_digital = json.dumps(person_digital, encoding='utf-8', ensure_ascii=False, sort_keys=True)

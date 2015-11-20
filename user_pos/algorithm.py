@@ -125,13 +125,13 @@ def run_random_forest(now):
 
         person = json.loads(line)
         person_list = [person["7"], person["8"], person["9"], person["10"], person["11"], person["12"], person["13"],
-                       person["15"], person["17"], person["23"]]
+                       person["15"], person["17"], person["23"], person["51"], person["57"]]
 
         training.append(person_list)
 
         count += 1
 
-    # 读170个落选者作为训练
+    # 读now个落选者作为训练
     count = 0
     loser_lines = input_loser.readlines()
     for line in loser_lines:
@@ -140,7 +140,7 @@ def run_random_forest(now):
 
         person = json.loads(line)
         person_list = [person["6"], person["7"], person["8"], person["9"], person["10"], person["11"], person["12"],
-                       person["14"], person["16"], person["22"]]
+                       person["14"], person["16"], person["22"], person["72"], person["78"]]
 
         training.append(person_list)
 
@@ -180,7 +180,7 @@ def run_random_forest(now):
         if 90+true_bias <= count < 140+true_bias:
             person = json.loads(line)
             person_list = [person["7"], person["8"], person["9"], person["10"], person["11"], person["12"], person["13"],
-                       person["15"], person["17"], person["23"]]
+                       person["15"], person["17"], person["23"], person["51"], person["57"]]
 
             if clf.predict(person_list)[0] == 1:
                 TP += 1
@@ -198,7 +198,7 @@ def run_random_forest(now):
         if 100+false_bias <= count < 1100+false_bias:
             person = json.loads(line)
             person_list = [person["6"], person["7"], person["8"], person["9"], person["10"], person["11"], person["12"],
-                        person["14"], person["16"], person["22"]]
+                        person["14"], person["16"], person["22"], person["72"], person["78"]]
 
             if clf.predict(person_list)[0] == 0:
                 TN += 1

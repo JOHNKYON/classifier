@@ -131,6 +131,27 @@ for line in input_people.readlines():
     # print count
     person_digital["22"] = grade_dig(person[label["22"]])
 
+    # 奖学金级别
+    if person[label["72"]] == "国家级":
+        person_digital["72"] = 1
+    elif person[label["72"]] == "院校级":
+        person_digital["72"] = 0.5
+    else:
+        person_digital["72"] = 0
+
+    # 英语等级和分数
+    try:
+        if person[label["78"]] == "CET6":
+            person_digital["78"] = (int(person[label["59"]])-400)/100
+        elif person[label["78"]] == "CET4":
+            person_digital["78"] = (int(person[label["79"]])-400)/200
+        elif person[label["78"]] == "TOEFL":
+            person_digital["78"] = (int(person[label["79"]])-400)/25
+        else:
+            person_digital["78"] = 0
+    except:
+        person_digital["78"] = -1
+
     # 将person_digital转换为json
     j_person_digital = json.dumps(person_digital, encoding='utf-8', ensure_ascii=False, sort_keys=True)
 

@@ -63,7 +63,7 @@ print pre_big(big)'''
 
 muilt = 1
 
-while muilt:
+'''while muilt:
     try:
         TP = 0
         FP = 0
@@ -83,6 +83,17 @@ while muilt:
         muilt += 0.2
     except:
         print muilt
-        break
+        break'''
+for index in range(0, 500):
+    print index
+    result = algorithm.run_random_forest(1800)
+    TP += result[0]
+    FP += result[1]
+    TN += result[2]
+    FN += result[3]
+
+precision = TP / (TP + FP)
+recall = TP / (TP + FN)
+accuracy = (TP + TN) / (TP + FP + TN + FN)
 
 print("precision = %f\nrecall = %f\naccuracy = %f" % (precision, recall, accuracy))
